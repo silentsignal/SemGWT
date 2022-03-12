@@ -1,0 +1,12 @@
+rules:
+- id: untitled_rule
+  message: rpc method found $STR
+  languages: [js]
+  severity: INFO
+  pattern: |
+    function $FUN($B,$C,$D){
+        var $VARS;
+        $ARR[$H=++$DSN]=$IVF;
+        new $CLASS(($ESN[$H]=$ELQ+$SJO,$B),$NP,"$STR");
+        ...
+    }
