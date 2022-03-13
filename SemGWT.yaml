@@ -1,12 +1,20 @@
 rules:
-- id: untitled_rule
-  message: rpc method found $STR
+- id: gwt_rpc_method_verX
+  message: "GWTRPC: $RPCNAME"
   languages: [js]
   severity: INFO
   pattern: |
-    function $FUN($B,$C,$D){
         var $VARS;
-        $ARR[$H=++$DSN]=$IVF;
-        new $CLASS(($ESN[$H]=$ELQ+$SJO,$B),$NP,"$STR");
-        ...
+        $ARR[...]=$IVF;
+        new $CLASS((...,$B),$NP,"$RPCNAME");
+- id: gwt_rpc_method_verY
+  message: "GWTRPC: $RPCNAME"
+  languages: [js]
+  severity: INFO
+  pattern: |
+    function $JSFUNC($JSARG0){
+      this.$W=$JSARG0;
+      this.$X='$FULLRPCNAME';
+      this.$Y='$RPCNAME';
+      this.$Z=new $C();
     }
