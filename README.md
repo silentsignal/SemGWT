@@ -11,7 +11,7 @@ Design
 
 At this point we try to provide standalone tools to implement different phases of the extraction process:
 
-- The preprocessor extract pure JavaScript code from static cache files provided by GWT applications
+- The preprocessor extracts pure JavaScript code from static cache files provided by GWT applications
 - Semgrep rules are used to extract RPC interface information from the preprocessed JavaScript
 - Post processing is needed to transform the extracted data to HTTP requests (or other formats useful for the user)
 
@@ -26,7 +26,7 @@ Performance
 
 One weakness of Semgrep is that it can easily consume (almost) boundless memory. Because of this, rules must be created and tested carefully, and the process needs special parameters for larger files. 
 
-In particular, defining code block patterns with ellipses inside (e.g. `function $FOO(){var $X; ...}`) can have detrimental effect on performance, so you should try to avoid this and focus on sequences of statements.
+In particular, defining code block patterns with ellipses inside (e.g. `function $FOO(){var $X; ...}`) can have detrimental effect on performance when parsing large inputs, so you should try to avoid this and focus on sequences of statements.
 
 Semgrep has both size and time limits by default. To analyze a 10MB JavaScript file, I had to disable timouts, and set the size limit above the files size:
 
