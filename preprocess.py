@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
+
 import os
 import re
 import sys
 import ast
 
 RE_ONSCRIPTDOWNLOADED=re.compile("^[^\\.]+\\.onScriptDownloaded\\(")
-RE_BODYSCRIPT=re.compile("<body><script><!--")
 cache=open(sys.argv[1],"r").read()
 dirname=os.path.basename(sys.argv[1]).split('.')[0]
 
@@ -22,5 +23,5 @@ elif cache.startswith("<html>"): # version Y
         if n == 0:
             continue
         with open(os.path.join(dirname,"%d.js" % (n)),"w") as out:
-            out.write(v.replace("--></script>","").replace("</body></htlm>",""))
+            out.write(v.replace("--></script>","").replace("</body></html>",""))
     
