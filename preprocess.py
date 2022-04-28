@@ -4,7 +4,6 @@ import sys
 import ast
 
 RE_ONSCRIPTDOWNLOADED=re.compile("^[^\\.]+\\.onScriptDownloaded\\(")
-RE_BODYSCRIPT=re.compile("<body><script><!--")
 cache=open(sys.argv[1],"r").read()
 dirname=os.path.basename(sys.argv[1]).split('.')[0]
 
